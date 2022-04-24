@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:vehicles_app/screens/categories_screen.dart';
 import 'package:vehicles_app/screens/category_details.dart';
+import 'package:vehicles_app/screens/favorites_screen.dart';
+import 'package:vehicles_app/screens/splash_screen.dart';
+import 'package:vehicles_app/screens/tab_screen.dart';
+import 'package:vehicles_app/screens/vehicle_details_screen.dart';
+import 'package:vehicles_app/themes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,22 +18,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: CategoriesScreen(),
+      theme: Themes.lightMode,
+      darkTheme: Themes.darkMode,
+      themeMode: ThemeMode.system,
+      home: SplashScreen2(),
       routes: {
-        CategoryDetailsScreen.routeName: (context) => CategoryDetailsScreen()
+        CategoryDetailsScreen.routeName: (context) => CategoryDetailsScreen(),
+        VehicleDetailsScreen.routeName: (context) => VehicleDetailsScreen(),
+        FavoritesScreen.routeName: (context) => FavoritesScreen(),
+        TabScreen.routeName: (context) => TabScreen()
       },
     );
   }

@@ -10,16 +10,19 @@ class VehicleModel {
   final String ImageUrl;
   final Color color;
   String? description;
-  bool? isFullOption;
-  VehicleModel(
-      {required this.id,
-      required this.title,
-      required this.categoryTitle,
-      required this.year,
-      required this.engineCapacity,
-      required this.price,
-      required this.ImageUrl,
-      required this.color,
-      this.description,
-      this.isFullOption});
+  bool isFullOption;
+  bool isFavorite;
+  VehicleModel({
+    required this.id,
+    required this.title,
+    required this.categoryTitle,
+    required this.year,
+    required this.engineCapacity,
+    required this.price,
+    required this.ImageUrl,
+    required this.color,
+    this.description,
+    required this.isFullOption,
+    this.isFavorite = false,
+  });
 }
